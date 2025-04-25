@@ -49,7 +49,8 @@ STRING_DIR		=	$(SRCS)string/ft_atoi.c \
 					$(SRCS)string/ft_strnstr.c \
 					$(SRCS)string/ft_strrchr.c \
 					$(SRCS)string/ft_strtrim.c \
-					$(SRCS)string/ft_substr.c
+					$(SRCS)string/ft_substr.c \
+					$(SRCS)string/ft_strcmp.c
 
 LIST_DIR		=	$(SRCS)list/ft_lstadd_back.c \
 					$(SRCS)list/ft_lstadd_front.c \
