@@ -6,7 +6,7 @@
 /*   By: witong <witong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 20:06:48 by witong            #+#    #+#             */
-/*   Updated: 2024/10/02 09:22:25 by witong           ###   ########.fr       */
+/*   Updated: 2025/05/09 16:31:13 by witong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,19 @@ static char	*read_and_cache(char **cache, int fd)
 char	*get_next_line(int fd)
 {
 	static char	*cache[MAX_FD];
+	int			i;
 
 	if (fd < 0 || fd >= MAX_FD || BUFFER_SIZE <= 0)
+	{
+		i = 0;
+		while (i < MAX_FD)
+		{
+			free(cache[i]);
+			cache[i] = NULL;
+			i++;
+		}
 		return (NULL);
+	}
 	if (!cache[fd])
 		cache[fd] = ft_strdup("");
 	if (!cache[fd])
